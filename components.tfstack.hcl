@@ -16,9 +16,7 @@ required_providers {
   }
 }
 
-provider "aws" "this" {
-     region = "us-east-1"
- }
+provider "aws" "this" {}
 
 component "bucket" {
   source = "./bucket"
