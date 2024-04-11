@@ -9,15 +9,6 @@ variable "instances" {
   type = number
 }
 
-required_providers {
-  aws = {
-    source  = "hashicorp/aws"
-    version = "~> 5.44.0"
-  }
-}
-
-provider "aws" "this" {}
-
 component "bucket" {
   source = "./bucket"
 
@@ -26,6 +17,6 @@ component "bucket" {
   }
 
   providers = {
-    aws = provider.aws.this
+    aws = provider.aws.configurations
   }
 }
