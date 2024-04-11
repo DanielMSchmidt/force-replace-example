@@ -7,8 +7,6 @@ required_providers {
 
 provider "aws" "configurations" {
   config {
-    region = each.value
-
     assume_role_with_web_identity {
       role_arn                = var.role_arn
       web_identity_token_file = var.identity_token_file
