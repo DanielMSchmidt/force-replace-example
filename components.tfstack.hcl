@@ -17,6 +17,6 @@ component "random" {
   }
 
   providers = {
-    null = provider.random.this
+    random = provider.random.this
   }
 }
