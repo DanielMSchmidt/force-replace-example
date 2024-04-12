@@ -3,6 +3,7 @@
 
 deployment "simple" {
   variables = {
+    prefix = "foo"
     keeper = "foo"
   }
 }

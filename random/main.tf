@@ -10,16 +10,23 @@ terraform {
   }
 }
 
+variable "prefix" {
+  type = string
+}
+
 variable "keeper" {
   type = string
 }
 
-resource "random_pet" "server" {
+resource "random_pet" "this" {
+  prefix = var.prefix
+  length = 3
+
   keepers = {
-    keeper = var.keeper
+    prefix = var.keeper
   }
 }
 
-output "pet" {
-  value = random_pet.server.id
+output "name" {
+  value = random_pet.this.id
 }

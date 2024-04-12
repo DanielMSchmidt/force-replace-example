@@ -5,15 +5,16 @@ variable "keeper" {
   type = string
 }
 
-variable "instances" {
-  type = number
+variable "prefix" {
+  type = string
 }
 
 component "random" {
   source = "./random"
 
   inputs = {
-      keeper = var.keeper
+    prefix = var.prefix
+    keeper = var.keeper
   }
 
   providers = {
