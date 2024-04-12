@@ -1,7 +1,7 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-variable "prefix" {
+variable "keeper" {
   type = string
 }
 
@@ -9,14 +9,14 @@ variable "instances" {
   type = number
 }
 
-component "bucket" {
-  source = "./bucket"
+component "random" {
+  source = "./random"
 
   inputs = {
-      bucket_name = "foo"
+      keeper = var.keeper
   }
 
   providers = {
-    aws = provider.aws.configurations
+    null = provider.random.this
   }
 }
